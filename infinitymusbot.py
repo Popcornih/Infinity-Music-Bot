@@ -4,11 +4,11 @@ from pytgcalls import PyTgCalls
 from pytgcalls.types import AudioPiped
 import yt_dlp
 
-API_ID = 123456      # ganti dengan API ID
-API_HASH = "39251814"
-BOT_TOKEN = "e0b10019a16da0cb32fd647a0ad01ba4"
+API_ID = 39251814      # ganti dengan API ID
+API_HASH = "e0b10019a16da0cb32fd647a0ad01ba4"
+BOT_TOKEN = "8487840071:AAHEx7nAUPb7uQ0OU_mxkLiDO3H7bwXKccg"
 
-app = Client("infinitymusbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client("music-bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 call = PyTgCalls(app)
 
 playlist = {}   # menyimpan antrean lagu untuk tiap grup
@@ -34,7 +34,7 @@ async def play(app, message):
     chat_id = message.chat.id
 
     if len(message.command) < 2:
-        return await message.reply("Kirim judul atau link YouTube.\nContoh: `/play aku bukan jodohnya`")
+        return await message.reply("Kirim judul atau link YouTube.\nContoh: `/play Jengah`")
 
     query = message.text.split(" ", 1)[1]
 
@@ -113,4 +113,3 @@ app.start()
 call.start()
 print("Bot music berjalan...")
 app.idle()
-=
